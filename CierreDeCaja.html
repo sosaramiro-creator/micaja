@@ -49,16 +49,16 @@ body{background:#0f0f1a;color:#eee;font-family:system-ui,-apple-system,sans-seri
 .et.on{background:rgba(240,192,64,.12);border-color:#f0c040}
 .et .el{font-size:8px;color:#666;letter-spacing:.5px;text-transform:uppercase}
 .et.on .el{color:#f0c040}
-.et .ev{font-size:13px;font-weight:700;color:#ccc;margin-top:1px}
+.et .ev{font-size:13px;font-weight:700;color:#fff;margin-top:1px}
 .et.on .ev{color:#f0c040}
 /* CARDS */
 .card{background:#1a1a2e;border-radius:12px;padding:14px;margin-bottom:12px;border:1px solid #1e1e2e}
 /* RESULTADOS */
 .rg2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
 .rb{border-radius:10px;padding:14px;text-align:center}
-.rb .rl{font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:#888;margin-bottom:4px}
+.rb .rl{font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:#aaa;margin-bottom:4px}
 .rb .rv{font-size:22px;font-weight:700}
-.rb .rs{font-size:10px;color:#888;margin-top:2px}
+.rb .rs{font-size:10px;color:#aaa;margin-top:2px}
 .sem{border-radius:10px;padding:12px 13px;margin-bottom:12px;display:flex;gap:10px;align-items:center;font-size:13px;line-height:1.4}
 /* BARRA */
 .bar{background:#111;border-radius:20px;height:14px;overflow:hidden;display:flex;margin-bottom:8px}
@@ -66,19 +66,19 @@ body{background:#0f0f1a;color:#eee;font-family:system-ui,-apple-system,sans-seri
 /* PROGRESO */
 .pw{background:#0a0a14;border-radius:20px;height:10px;overflow:hidden;margin:6px 0 4px}
 .pf{height:100%;border-radius:20px;background:linear-gradient(90deg,#f0c040,#ffe680);transition:width .5s}
-.prow{display:flex;justify-content:space-between;font-size:11px;color:#666;margin-top:4px}
+.prow{display:flex;justify-content:space-between;font-size:11px;color:#aaa;margin-top:4px}
 /* BTNS */
 .btn{width:100%;margin-top:12px;padding:14px;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:system-ui}
 .btn-gold{background:#f0c040;color:#000}
 .btn-gold:active{background:#ffe680}
-.btn-ghost{background:#1a1a2e;color:#eee;border:1.5px solid #2a2a40;margin-top:8px}
+.btn-ghost{background:#1a1a2e;color:#fff;border:1.5px solid #2a2a40;margin-top:8px}
 .btn-ghost:active{border-color:#f0c040}
 .btn-sm{padding:7px 13px;font-size:12px;font-weight:700;border-radius:7px;cursor:pointer;border:1.5px solid rgba(240,192,64,.4);background:rgba(240,192,64,.1);color:#f0c040;font-family:system-ui}
 /* STATS */
 .stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px}
 .st{background:#1a1a2e;border-radius:10px;padding:10px;text-align:center;border:1px solid #1e1e2e}
-.sl{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#666;margin-bottom:3px}
-.sv{font-size:17px;font-weight:700}
+.sl{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#aaa;margin-bottom:3px}
+.sv{font-size:17px;font-weight:700;color:#fff}
 /* HISTORIAL ITEM */
 .hi{background:#1a1a2e;border-radius:10px;padding:12px;margin-bottom:8px;border-left:3px solid #333;border:1px solid #1e1e2e;border-left-width:3px}
 .hi.ok{border-left-color:#3ecf8e}
@@ -91,14 +91,14 @@ body{background:#0f0f1a;color:#eee;font-family:system-ui,-apple-system,sans-seri
 .flash{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#3ecf8e;color:#000;font-weight:700;font-size:13px;padding:10px 22px;border-radius:30px;z-index:999;opacity:0;transition:opacity .25s;pointer-events:none;white-space:nowrap}
 .flash.on{opacity:1}
 /* SELECTOR MES */
-.mes-sel{background:#1a1a2e;border:1.5px solid #2a2a40;border-radius:8px;color:#eee;font-size:13px;padding:7px 10px;outline:none;-webkit-appearance:none}
+.mes-sel{background:#1a1a2e;border:1.5px solid #2a2a40;border-radius:8px;color:#fff;font-size:13px;padding:7px 10px;outline:none;-webkit-appearance:none}
 /* MÉTRICAS */
 .met-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
 .mg{background:#1a1a2e;border-radius:10px;padding:12px;border:1px solid #1e1e2e}
-.mg .ml{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#666;margin-bottom:4px}
-.mg .mv{font-size:18px;font-weight:700}
+.mg .ml{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#aaa;margin-bottom:4px}
+.mg .mv{font-size:18px;font-weight:700;color:#fff}
 /* EMPTY */
-.empty{text-align:center;padding:40px 20px;color:#555;font-size:13px;line-height:1.7}
+.empty{text-align:center;padding:40px 20px;color:#888;font-size:13px;line-height:1.7}
 </style>
 </head>
 <body>
@@ -266,7 +266,7 @@ function renderCierre(){
     +'<div style="margin-top:16px">'+resHtml+'</div>';
 }
 
-function onVentaChange(v){ cierreVenta=v; renderCierre(); }
+function onVentaChange(v){ cierreVenta=v; if(window._vt) clearTimeout(window._vt); window._vt=setTimeout(function(){renderCierre();},400); }
 function setEt(i){ etSel=i; saveCfg(); renderCierre(); }
 
 function guardarCierre(){
@@ -312,7 +312,7 @@ function renderHistorial(){
       +'<div style="display:flex;justify-content:space-between;align-items:flex-start">'
         +'<div>'
           +'<div style="font-size:12px;color:#888">'+r.fechaDisplay+' · '+ET_LBL[r.etapa]+'</div>'
-          +'<div style="font-size:11px;color:#555;margin-top:1px">Venta: $'+fmt(r.v)+'</div>'
+          +'<div style="font-size:13px;color:#fff;font-weight:600;margin-top:2px">Venta: $'+fmt(r.v)+'</div>'
           +(r.nota?'<div style="font-size:11px;color:#666;margin-top:2px;font-style:italic">"'+r.nota+'"</div>':'')
         +'</div>'
         +'<div style="display:flex;gap:6px;align-items:center">'
